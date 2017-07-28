@@ -1,9 +1,20 @@
-.left-block
-	background-color: rgba(0,200,0,0.6);
+body
+    background-color:#eee
 
-.right-block
-	background-color: rgba(0,0,200,0.6);
+.editor
+    display: flex
+    
 
-.left-block, .right-block
-	display: inline-block
-	width:40%;
+.editor-tools, 
+.editor-display
+    margin:2px;
+    border: 2px solid gray
+
+.editor-display
+    background-color: white
+    min-width:300px
+    min-height: 300px
+
+.tools-list
+    display: flex
+    flex-direction: column
