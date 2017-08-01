@@ -1,0 +1,134 @@
+.editor-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom:10px;
+    margin-top:10px;
+    padding-right:10px;
+}
+
+.editor-border{
+    border: 2px solid gray;
+}
+
+.editor-border__radius{
+    border-radius: 5px;
+}
+
+.test{
+    background-color: greenyellow;
+    margin: 2px;
+}
+
+.editor-window{
+    flex-flow: row nowrap;
+    display: flex;
+    padding:10px;
+}
+
+.editor-display,
+.editor-tools{
+    padding: 10px;
+    border: 2px solid gray; 
+}
+
+.editor-display{
+    flex-grow: 3;
+    background-color: white;
+}
+
+.editor-tools {
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+.editor-content,
+.editor-footer{
+    display: flex;
+}
+
+.tools-right-block{
+    width: 50px;
+}
+
+.tools-content,
+.tools-footer{
+    flex-grow: 1;
+}
+
+.add-item-button{
+    width:40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #eee;
+    border: 2px solid rgb(160,160,160);
+    font-size: 50px;
+    line-height: 0;
+    padding: 0;
+    color: rgb(140, 140, 140);
+    border-radius: 5px;
+}
+
+.add-item-button:active{
+    border-color: black;
+}
+
+li {
+    margin-top: 10px;
+}
+
+li:first-child{
+    margin-top:0;
+}
+
+ul {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
+}
+
+input[type="text"],
+textarea{
+    border:2px solid rgb(140,140,140);
+    padding: 6px;
+    min-width: 250px;
+}
+
+.editor-content,
+.editor-footer{
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(200,200,200);
+}
+
+.editor-display{
+    color:rgb(50,50,50);
+}
+
+.editor-display header h1
+{
+    text-align: center;
+}
+
+.editor-display ul{
+    list-style-type: disc;
+}
+
+.editor-display h1.default{
+    margin-top:10%;
+}
+
+textarea::-webkit-resizer {
+    display: none;
+}
+
+textarea {
+    resize: none;
+    width:250px;
+}

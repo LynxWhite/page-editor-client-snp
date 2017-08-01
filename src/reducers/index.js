@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import items from './items';
+import header from './header';
 import content from './content';
 import footer from './footer';
 
 const rootReducer = combineReducers({
-  items,
+  header,
   content,
   footer
 });

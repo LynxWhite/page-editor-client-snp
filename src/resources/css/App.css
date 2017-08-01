@@ -1,0 +1,26 @@
+*:focus{
+    outline: none;
+}
+
+.page-wrapper{
+    background-color: rgb(245,245,245);
+    height: 100vh;
+}
+
+.button{
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px;
+    background: rgba(235,233,249,1);
+    background: -moz-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 90%, rgba(161,160,174,1) 92%, rgba(109,105,122,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,233,249,1)), color-stop(90%, rgba(216,208,239,1)), color-stop(92%, rgba(161,160,174,1)), color-stop(100%, rgba(109,105,122,1)));
+    background: -webkit-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 90%, rgba(161,160,174,1) 92%, rgba(109,105,122,1) 100%);
+    background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 90%, rgba(161,160,174,1) 92%, rgba(109,105,122,1) 100%);
+    background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 90%, rgba(161,160,174,1) 92%, rgba(109,105,122,1) 100%);
+    background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 90%, rgba(161,160,174,1) 92%, rgba(109,105,122,1) 100%);
+}
+
+.button:active{
+    background: rgba(235,233,249,1);
+}

@@ -1,4 +1,4 @@
-import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE} from '../constants/ActionTypes';
+import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE, SET_LIST, SET_IMAGE} from '../constants/ActionTypes';
 
 const initialState = [
 
@@ -15,7 +15,7 @@ const list_field = {
 };
 
 const image_field = {
-    type: 'img',
+    type: 'image',
     value: ''
 };
 
@@ -29,6 +29,11 @@ export default function content(state = initialState, action) {
         case ADD_IMAGE:
             return [...state, image_field];
         case SET_TEXT:
+        case SET_LIST:
+            new_state[action.id] = Object.assign({}, new_state[action.id], {value: action.text});
+            return new_state;
+        case SET_IMAGE:
+            console.log('and here', action);
             new_state[action.id] = Object.assign({}, new_state[action.id], {value: action.text});
             return new_state;
         default:
