@@ -1,23 +1,20 @@
 import React, {Component} from 'react';
 
+import PreviewHeader from './preview-header.jsx';
+import PreviewFooter from './preview-footer.jsx';
+
 class EditorPreview extends Component {
     render() {
         return (
             <div className='editor-display'>
-                    <header>
-                        <h1> Заголовок страницы </h1>
-                        <h3> Описание страницы </h3>
-                    </header>
+                    <PreviewHeader/>
                     <section>
                         <p> Какой-то текст </p>
                         <ul>
                             <li> список </li>
                         </ul>
                     </section>
-                    <footer>
-                        <h4> Контактные данные </h4>
-                        <h6><strong>Email: </strong> lynx@g.com </h6>
-                    </footer>
+                    <PreviewFooter/>
                 </div>
         );
     }

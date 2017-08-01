@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import EditorToolsHeader from './editor-tools-header.jsx';
+import EditorToolsFooter from './editor-tools-footer.jsx';
 
 class EditorTools extends Component {
     render() {
@@ -24,24 +25,7 @@ class EditorTools extends Component {
                         <button className='add-item-button'>+</button>
                     </div>
                 </div>
-                <div className='editor-footer'>
-                    <div className='tools-footer'>
-                        <ul>
-                                <li>
-                                    <input type="text" placeholder='Name'/>
-                                </li>
-                                <li>
-                                    <input type="text" placeholder='Email' />
-                                </li>
-                                <li>
-                                    <input type="text"  placeholder='Phone'/>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className='tools-right-block'>
-                            <button className='add-item-button'>+</button>
-                        </div>
-                    </div>
+                <EditorToolsFooter/>
                 </div>
         );
     }

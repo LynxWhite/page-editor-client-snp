@@ -1,0 +1,23 @@
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea{
+    border:2px solid rgb(140,140,140);
+    padding: 6px;
+    min-width: 250px;
+}
+
+input[type="tel"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 200px;
+}
+
+.requirements {
+    font-size: 14px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+}

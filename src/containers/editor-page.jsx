@@ -1,8 +1,8 @@
 import React from 'react';
 import '../resources/css/editor.css';
 
-import EditorTools from '../components/editor-tools.jsx';
-import EditorPreview from '../components/editor-preview.jsx';
+import EditorTools from '../components/editor/editor-tools.jsx';
+import EditorPreview from '../components/preview/editor-preview.jsx';
 
 const EditorPage = () => (
     <div className='editor-wrapper'>

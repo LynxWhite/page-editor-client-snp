@@ -1,3 +1,4 @@
+// header
 export const SET_TITLE = 'SET_TITLE';
 export const SET_DESCRIPTION = 'SET_DESCRIPTION';
 
@@ -8,3 +9,8 @@ export const ADD_IMAGE = 'ADD_IMAGE';
 export const SET_TEXT = 'SET_TEXT';
 export const SET_LIST = 'SET_LIST';
 export const SET_IMAGE = 'SET_IMAGE';
+
+//footer
+export const SET_NAME = 'SET_NAME';
+export const SET_EMAIL = 'SET_EMAIL';
+export const SET_PHONE = 'SET_PHONE';

@@ -7,6 +7,8 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers';
 
+import '../resources/css/input.css';
+
 const store = createStore(
     reducer,
     compose(
