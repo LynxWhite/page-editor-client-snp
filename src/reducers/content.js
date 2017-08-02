@@ -29,6 +29,8 @@ export default function content(state = initialState, action) {
         case ADD_IMAGE:
             return [...state, image_field];
         case SET_TEXT:
+            new_state[action.id] = {type:'text', value:action.text}
+            return new_state;
         case SET_LIST:
             new_state[action.id] = Object.assign({}, new_state[action.id], {value: action.text});
             return new_state;
