@@ -1,14 +1,33 @@
 import React, {Component} from 'react';
-import {addText, setText} from '../../actions/contentActions';
+import {addText, setText, addList, setList, addImage, setImage} from '../../actions/contentActions';
 import { connect } from 'react-redux';
 import DropDownButton from '../common/DropdownButton.jsx';
 
 class EditorToolsContent extends Component {
+    _handleImageChange = (e, i) => {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+            this.props.setImage(i, reader.result);
+        }
+
+        reader.readAsDataURL(file);
+    }
+
     render() {
         let tools = [];
         for(let i=0; i<this.props.tools.length; i++){
             if (this.props.tools[i].type === 'text'){
                 tools.push(<input type='text' value={this.props.tools[i].value} onChange={(e)=>(this.props.setText(i, e.target.value))} />);
+            }
+            if (this.props.tools[i].type === 'list'){
+                tools.push(<textarea rows='4' placeholder='text1' value={this.props.tools[i].value} onChange={(e)=>(this.props.setList(i, e.target.value))} />);
+            }
+            if (this.props.tools[i].type === 'image'){
+                tools.push(<input type='file' onChange={(e)=>(this._handleImageChange(e, i))} />);
             }
         }
 
@@ -16,15 +35,6 @@ class EditorToolsContent extends Component {
                 <div className='editor-content'>
                     <div className='tools-content'>
                         <ul>
-                            <li>
-                                <input type="text" placeholder='Text' />
-                            </li>
-                            <li>
-                                <input type="file"/>
-                            </li>
-                            <li>
-                                <textarea rows='4' placeholder='text1' />
-                            </li>
                             {tools.map((tool, key) => (
                                 <li key={'tool_'+key}>
                                     {tool}
@@ -36,8 +46,8 @@ class EditorToolsContent extends Component {
                     <DropDownButton>
                         <div className={'dropdown-content'}>
                             <div className={'dropdown-item'} onClick={this.props.addText}> Текст </div>
-                            <div className={'dropdown-item'}> Изображение </div>
-                            <div className={'dropdown-item'}> Список </div>
+                            <div className={'dropdown-item'} onClick={this.props.addImage}> Изображение </div>
+                            <div className={'dropdown-item'} onClick={this.props.addList} > Список </div>
                         </div>
                     </DropDownButton>
                     </div>
@@ -50,5 +60,5 @@ export default connect(
     state => ({
         tools: state.content
 }),
-{addText, setText}
+{addText, setText, addList, setList, addImage, setImage}
 )(EditorToolsContent);

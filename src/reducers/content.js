@@ -11,7 +11,7 @@ const text_field = {
 
 const list_field = {
     type: 'list',
-    value: []
+    value: ''
 };
 
 const image_field = {
@@ -32,11 +32,10 @@ export default function content(state = initialState, action) {
             new_state[action.id] = {type:'text', value:action.text}
             return new_state;
         case SET_LIST:
-            new_state[action.id] = Object.assign({}, new_state[action.id], {value: action.text});
+            new_state[action.id] = {type:'list', value:action.text};
             return new_state;
         case SET_IMAGE:
-            console.log('and here', action);
-            new_state[action.id] = Object.assign({}, new_state[action.id], {value: action.text});
+            new_state[action.id] = {type:'image', value:action.text};;
             return new_state;
         default:
             return state;

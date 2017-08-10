@@ -125,3 +125,7 @@ textarea {
     resize: none;
     width:250px;
 }
+
+.preview-image{
+    max-height: 500px;
+}
