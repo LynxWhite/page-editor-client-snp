@@ -78,14 +78,25 @@
     border-color: black;
 }
 
+.edit-tools-item:not(:last-child){
+    margin-bottom: 5px;
+}
+
+.edit-tools-item,
 li {
     margin-top: 10px;
 }
 
+.edit-tools-item,
 li:first-child{
     margin-top:0;
 }
 
+.edit-tools-container{
+    padding-left: 35px;
+}
+
+.edit-tools-container,
 ul {
     padding-top: 10px;
     padding-bottom: 10px;

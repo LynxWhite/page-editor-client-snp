@@ -1,4 +1,4 @@
-import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE, SET_LIST, SET_IMAGE} from '../constants/ActionTypes';
+import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE, SET_LIST, SET_IMAGE, SWAP_ITEMS} from '../constants/ActionTypes';
 
 export function addText(){
     return {type: ADD_TEXT_INPUT};
@@ -22,4 +22,8 @@ export function addImage() {
 
 export function setImage(id, text){
     return {type:SET_IMAGE, id:id, text:text}
+}
+
+export function swapItems(oldIndex, newIndex){
+    return {type:SWAP_ITEMS, oldIndex:oldIndex, newIndex:newIndex};
 }

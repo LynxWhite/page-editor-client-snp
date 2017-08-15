@@ -1,4 +1,4 @@
-import {SET_NAME, SET_EMAIL, SET_PHONE} from '../constants/ActionTypes';
+import {SET_NAME, SET_EMAIL, SET_PHONE, CLEAR_PAGE} from '../constants/ActionTypes';
 
 const initialState = {
     name: '',
@@ -21,6 +21,8 @@ export default function footer(state = initialState, action) {
             new_state = Object.assign({}, state);
             new_state.phone = action.payload;
             return new_state;
+        case CLEAR_PAGE:
+            return initialState;
         default:
             return state;
     }

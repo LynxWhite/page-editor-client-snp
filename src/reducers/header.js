@@ -1,4 +1,4 @@
-import {SET_TITLE, SET_DESCRIPTION} from '../constants/ActionTypes';
+import {SET_TITLE, SET_DESCRIPTION, CLEAR_PAGE} from '../constants/ActionTypes';
 
 const initialState = {
     title: '',
@@ -18,6 +18,8 @@ export default function header(state = initialState, action) {
                 return state;
             new_state.description = action.payload;
             return new_state;
+        case CLEAR_PAGE:
+            return initialState;
         default:
             return state;
     }

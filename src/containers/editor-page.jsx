@@ -4,10 +4,13 @@ import '../resources/css/editor.css';
 import EditorTools from '../components/editor/editor-tools.jsx';
 import EditorPreview from '../components/preview/editor-preview.jsx';
 
-const EditorPage = () => (
+import { connect } from 'react-redux';
+import {clearPage} from '../actions/editorActions';
+
+const EditorPage = (props) => (
     <div className='editor-wrapper'>
         <div className='nav-header'>
-            <button className='editor-border editor-border__radius button'>Clear</button>
+            <button className='editor-border editor-border__radius button' onClick={props.clearPage}>Clear</button>
             <button className='editor-border editor-border__radius button'>Save</button>
             <button className='editor-border editor-border__radius button'>Delete</button>
         </div>
@@ -18,4 +21,4 @@ const EditorPage = () => (
     </div>
 );
 
-export default EditorPage;
+export default connect(null, {clearPage})(EditorPage);

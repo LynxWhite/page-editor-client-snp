@@ -1,7 +1,22 @@
 import React, {Component} from 'react';
-import {addText, setText, addList, setList, addImage, setImage} from '../../actions/contentActions';
+import {addText, setText, addList, setList, addImage, setImage, swapItems} from '../../actions/contentActions';
 import { connect } from 'react-redux';
 import DropDownButton from '../common/DropdownButton.jsx';
+import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+
+const SortableItem = SortableElement(({value}) =>
+  <div className='edit-tools-item'> {value}</div>
+);
+
+const SortableList = SortableContainer(({items}) => {
+  return (
+    <div className='edit-tools-container'>
+      {items.map((value, index) => (
+        <SortableItem key={`item-${index}`} index={index} value={value} />
+      ))}
+    </div>
+  );
+});
 
 class EditorToolsContent extends Component {
     _handleImageChange = (e, i) => {
@@ -17,7 +32,7 @@ class EditorToolsContent extends Component {
         reader.readAsDataURL(file);
     }
 
-    render() {
+    getItems() {
         let tools = [];
         for(let i=0; i<this.props.tools.length; i++){
             if (this.props.tools[i].type === 'text'){
@@ -30,17 +45,19 @@ class EditorToolsContent extends Component {
                 tools.push(<input type='file' onChange={(e)=>(this._handleImageChange(e, i))} />);
             }
         }
+        return tools;
+    }
 
+    onSortEnd = ({oldIndex, newIndex}) => {
+        this.props.swapItems(oldIndex, newIndex);
+    };
+
+    render() {
+        const tools = this.getItems();
         return (
                 <div className='editor-content'>
                     <div className='tools-content'>
-                        <ul>
-                            {tools.map((tool, key) => (
-                                <li key={'tool_'+key}>
-                                    {tool}
-                                </li>
-                            ))}
-                        </ul>
+                        <SortableList items={tools} onSortEnd={this.onSortEnd} />
                     </div>
                     <div className='tools-right-block'>
                     <DropDownButton>
@@ -60,5 +77,5 @@ export default connect(
     state => ({
         tools: state.content
 }),
-{addText, setText, addList, setList, addImage, setImage}
+{addText, setText, addList, setList, addImage, setImage, swapItems}
 )(EditorToolsContent);
