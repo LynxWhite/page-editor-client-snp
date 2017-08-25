@@ -1,4 +1,4 @@
-import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE, SET_LIST, SET_IMAGE, SWAP_ITEMS, CLEAR_PAGE} from '../constants/ActionTypes';
+import {ADD_TEXT_INPUT, SET_TEXT, ADD_LIST, ADD_IMAGE, SET_LIST, SET_IMAGE, SWAP_ITEMS, CLEAR_PAGE, LOAD_CONTENT} from '../constants/ActionTypes';
 import {arrayMove} from 'react-sortable-hoc';
 
 const initialState = [
@@ -42,6 +42,8 @@ export default function content(state = initialState, action) {
             return arrayMove(new_state, action.oldIndex, action.newIndex);
         case CLEAR_PAGE:
             return initialState;
+        case LOAD_CONTENT:
+            return action.payload;
         default:
             return state;
     }

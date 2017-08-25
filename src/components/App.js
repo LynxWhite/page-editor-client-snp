@@ -34,6 +34,7 @@ class App extends Component {
                 <div className='page-wrapper'>
                     <Route exact path='/' component={HomePage}/>
                     <Route exact path='/edit' component={EditorPage}/>
+                    <Route path='/edit/:id' component={EditorPage}/>
                 </div>
             </Router>
         </Provider>
